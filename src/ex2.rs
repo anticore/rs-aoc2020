@@ -31,16 +31,14 @@ pub fn run_ex_2_part_1() -> () {
 
     if let Ok(lines) = read_lines("./ex2.input.txt") {
         for line in lines {
-            if let Ok(ip) = line {
-                for cap in re.captures_iter(&ip) {
-                    let s = &cap[4];
-                    let c = &cap[3];
-                    let min = cap[1].to_string().parse().unwrap();
-                    let max = cap[2].to_string().parse().unwrap();
+            for cap in re.captures_iter(&line) {
+                let s = &cap[4];
+                let c = &cap[3];
+                let min = cap[1].to_string().parse().unwrap();
+                let max = cap[2].to_string().parse().unwrap();
 
-                    if is_password_valid(s, c, min, max) {
-                        count += 1;
-                    }
+                if is_password_valid(s, c, min, max) {
+                    count += 1;
                 }
             }
         }
@@ -50,7 +48,7 @@ pub fn run_ex_2_part_1() -> () {
 }   
 
 pub fn run_ex_2_part_2() -> () {
-    println!("Running exercise 2 part 1");
+    println!("Running exercise 2 part 2");
 
     let re = Regex::new(r"(\d+)-(\d+) (\w): (\w+)").unwrap();
 
@@ -58,16 +56,14 @@ pub fn run_ex_2_part_2() -> () {
 
     if let Ok(lines) = read_lines("./ex2.input.txt") {
         for line in lines {
-            if let Ok(ip) = line {
-                for cap in re.captures_iter(&ip) {
-                    let s = &cap[4];
-                    let c = &cap[3];
-                    let i1 = cap[1].to_string().parse().unwrap();
-                    let i2 = cap[2].to_string().parse().unwrap();
+            for cap in re.captures_iter(&line) {
+                let s = &cap[4];
+                let c = &cap[3];
+                let i1 = cap[1].to_string().parse().unwrap();
+                let i2 = cap[2].to_string().parse().unwrap();
 
-                    if is_password_valid_part_2(s, c, i1, i2) {
-                        count += 1;
-                    }
+                if is_password_valid_part_2(s, c, i1, i2) {
+                    count += 1;
                 }
             }
         }

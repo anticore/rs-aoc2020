@@ -4,6 +4,8 @@ mod ex1;
 use ex1::*;
 mod ex2;
 use ex2::*;
+mod ex3;
+use ex3::*;
 
 fn main() {
     println!("AoC 2020 - Choose exercise to run");
@@ -22,5 +24,9 @@ fn main() {
         run_ex_2_part_1();
     } else if choice.trim() == "22" {
         run_ex_2_part_2();
+    } else if choice.trim() == "31" {
+        run_ex_3_part_1();
+    } else if choice.trim() == "32" {
+        run_ex_3_part_2();
     }
 }
